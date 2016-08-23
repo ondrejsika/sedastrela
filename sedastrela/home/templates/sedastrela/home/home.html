@@ -1,4 +1,26 @@
 {% extends 'sedastrela/base.html' %}
 
 {% block content %}
+
+    {% if event_last %}
+        <section class="two">
+            <div class="container" style="text-align: left;">
+                <header>
+                    <h2>{{ events_last.name }}</h2>
+                </header>
+                <p>{{ events_last.short_description }}</p>
+            </div>
+        </section>
+        <hr>
+    {% endif %}
+    {% for news in news_last3 %}
+        <section class="two">
+            <div class="container" style="text-align: left;">
+                <header>
+                    <h2>{{ news.title }}</h2>
+                </header>
+                <p>{{ news.short_description }}</p>
+            </div>
+        </section>
+    {% endfor %}
 {% endblock content %}

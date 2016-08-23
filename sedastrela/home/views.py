@@ -8,11 +8,10 @@ def home_view(request):
     events = Event.objects.filter(is_active=True)
     news = News.objects.filter(is_active=True)
 
-    posts = []
-    for event in events:
-        pass
-
     return render(request, 'sedastrela/home/home.html', {
-        'posts': posts,
+        'events': events,
+        'event_last': events.last(),
+        'news': news,
+        'news_last3': news[:3],
     })
 
