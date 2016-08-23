@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'sedastrela.pages',
     'sedastrela.menu',
     'sedastrela.news',
+
+    'sedastrela.template',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sedastrela.urls'
+ROOT_URLCONF = 'sedastrela.root_urls'
 
 TEMPLATES = [
     {
@@ -68,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'sedastrela.menu.context_processors.menus',
             ],
         },
     },
